@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-11-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+    <template>
+        <lightning-card title={welcomeMessage} >
+            <div class="slds-var-m-around_medium">
+                <p class="slds-p-horizontal_small">Hello World {name} <br>
+                {name} is a {title}</p>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="text-input-id-47">
+                                <abbr class="slds-required" title="required">* </abbr>Enter Text Here</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" onkeyup={onKeyUp} id="text-input-id-47" placeholder="Placeholder text…" required=""
+                                    class="slds-input" />
+                            </div>
+                        </div>
+                    </div>
+        </lightning-card>
+
+
+    <div class="somePadding"> 
+        <lightning-card title="Tracking Courses Object" >
+            <div class="slds-var-m-around_medium">
+                <p>Course Name: {courses.courseName}</p>
+                <p>Trainee: {fullName}</p>
+                <lightning-input type="text" label="Enter Course Name" onkeyup={trackCourse}>
+                </lightning-input>
+            </div>
+        </lightning-card>
+    </div>
+    </template>
+    

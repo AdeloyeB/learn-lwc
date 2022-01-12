@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-11-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Quiz">
+        <div class="slds-m-around_medium">
+            <form action="">
+            <template for:each={quizQuestions} for:item="question">
+                <div key={question.id}>
+                    <div><strong>{question.id} - {question.question}</strong></div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-input type="radio" name={question.id} value="a" onchange={handleChange} label={question.answers.a}></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-input type="radio" name={question.id} value="b" onchange={handleChange} label={question.answers.b}></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-input type="radio" name={question.id} value="c" onchange={handleChange} label={question.answers.c}></lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <lightning-button variant="brand" type="submit" label="Submit" class="slds-m-around_medium" onclick={handleClick}></lightning-button>
+            <lightning-button variant="brand" type="submit" label="Submit" class="slds-m-around_medium" onclick={handleResetClick}></lightning-button>
+            </form>
+        </div>
+    </lightning-card>
+    
+</template>

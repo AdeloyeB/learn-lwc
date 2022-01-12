@@ -1,0 +1,12 @@
+.helloWorld{
+    background-color: burlywood;
+}
+
+p {
+    color: black;
+}
+
+.somePadding{
+    padding-top: 25px;
+    padding-bottom: 25px;   
+}
