@@ -2,8 +2,11 @@ import { LightningElement, track } from 'lwc';
 
 export default class QuizApp extends LightningElement {
 
-    selectedQuestionsCorrect = false;
-    selectedQuestions ={};
+    selectedAnswers = {}; //storing answers
+    correctAnswers = 0; //displaying results
+    get allNotSelected(){
+        return !(Object.keys(this.selectedAnswers).length === this.quizQuestions.length);
+    }
 
     @track quizQuestions=[
         {
@@ -29,14 +32,24 @@ export default class QuizApp extends LightningElement {
     ]
 
     handleChange(event){
+        console.log("name", event.target.name);
+        console.log("value", event.target.value);
         const {name, value} = event.target;
 
-        this.selectedQuestions = {...this.selectedQuestions, [name]: value}
+        this.selectedAnswers = {...this.selectedAnswers, [name]: value}
     }
 
-    handleClick(event){}
+    handleClick(event){
+        event.preventDefault()
+        console.log("System Debug: " + JSON.stringify(this.selectedAnswers));
+        let filteredSelectedAnswers = this.quizQuestions.filter(item=>this.selectedAnswers[item.id] === item.correctAnswer);
+        this.correctAnswers = filteredSelectedAnswers.length
+        console.log("System Debug: " + this.filteredSelectedAnswers);
+    }
 
-    handleResetClick(event){}
+    handleResetClick(event){
+        console.log("System Debug: " +  JSON.stringify(this.selectedAnswers));
+    }
 
 
 

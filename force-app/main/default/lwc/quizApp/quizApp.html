@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 01-11-2022
+  @last modified on  : 01-12-2022
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
@@ -10,7 +10,7 @@
         <div class="slds-m-around_medium">
             <form action="">
             <template for:each={quizQuestions} for:item="question">
-                <div key={question.id}>
+                <div class="slds-p-around_medium" key={question.id}>
                     <div><strong>{question.id} - {question.question}</strong></div>
                     <div class="slds-grid">
                         <div class="slds-col slds-size_4-of-12">
@@ -25,8 +25,8 @@
                     </div>
                 </div>
             </template>
-            <lightning-button variant="brand" type="submit" label="Submit" class="slds-m-around_medium" onclick={handleClick}></lightning-button>
-            <lightning-button variant="brand" type="submit" label="Submit" class="slds-m-around_medium" onclick={handleResetClick}></lightning-button>
+            <lightning-button variant="brand" type="submit" label="Submit" class="slds-p-around_small" disabled={allNotSelected} onclick={handleClick}></lightning-button>
+            <lightning-button variant="brand" type="reset" label="Reset" class="slds-p-around_reset" onclick={handleResetClick}></lightning-button>
             </form>
         </div>
     </lightning-card>
