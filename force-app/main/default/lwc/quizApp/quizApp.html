@@ -2,12 +2,17 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 01-12-2022
+  @last modified on  : 01-13-2022
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
     <lightning-card title="Quiz">
         <div class="slds-m-around_medium">
+            <template if:true={isSubmitted}>
+                <div class={isHighScore}>
+                    You have scored {correctAnswers} out of {quizQuestions.length}
+                </div>
+             </template>
             <form action="">
             <template for:each={quizQuestions} for:item="question">
                 <div class="slds-p-around_medium" key={question.id}>
@@ -25,7 +30,7 @@
                     </div>
                 </div>
             </template>
-            <lightning-button variant="brand" type="submit" label="Submit" class="slds-p-around_small" disabled={allNotSelected} onclick={handleClick}></lightning-button>
+            <lightning-button variant="brand" type="submit" label="Submit" class="slds-p-around_small" disabled={allNotSelected} onclick={handleSubmit}></lightning-button>
             <lightning-button variant="brand" type="reset" label="Reset" class="slds-p-around_reset" onclick={handleResetClick}></lightning-button>
             </form>
         </div>

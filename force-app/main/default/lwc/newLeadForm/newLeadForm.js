@@ -7,4 +7,9 @@ export default class NewLeadForm extends LightningElement {
     phone = "";
     company = "";
 
+    onSubmitHandler(event) {
+        event.preventDefault();       // stop the form from submitting
+        const fields = event.detail.fields
+    }
+
 }
