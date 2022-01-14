@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-14-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-button variant="brand" label="Show Child Component" title="showComponent"
+        onclick={showChildComponent}></lightning-button>
+    <lightning-button variant="brand" label="Disconnect Child Component" title="disconnectComponent" onclick={hideChildcComponent}></lightning-button>
+
+    <template if:true={isChildVisible}>
+        <c-disconnected-life-cycle-child></c-disconnected-life-cycle-child>
+    </template>
+</template>
