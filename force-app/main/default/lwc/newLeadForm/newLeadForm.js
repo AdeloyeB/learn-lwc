@@ -1,7 +1,6 @@
 import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { createRecord } from 'lightning/uiRecordApi';
-import { NavigationMixin } from 'lightning/navigation'
 import LEAD_OBJECT from '@salesforce/schema/Lead';
 import FIRSTNAME_FIELD from '@salesforce/schema/Lead.FirstName';
 import LASTNAME_FIELD from '@salesforce/schema/Lead.LastName';
@@ -56,14 +55,17 @@ export default class NewLeadForm extends LightningElement {
         const recordInput = { apiName: LEAD_OBJECT.objectApiName, fields };
         createRecord(recordInput)
             .then((lead) => {
+                console.log(JSON.stringify(recordInput));
+                console.log(JSON.stringify(lead))
                 this.leadId = lead.id;
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
-                        message: 'Lead created '+ lead.name,
+                        message: 'Lead created '+ this.firstName + " " + this.lastName,
                         variant: 'success'
                     })
                 );
+                
             })
             .catch((error) => {
                 console.log(error + JSON.stringify(recordInput));
