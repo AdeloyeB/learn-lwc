@@ -6,27 +6,11 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
-        <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
-            <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
-                <span class="slds-assistive-text">error</span>
-                <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
-                    title="Description of icon when needed">
-                    <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
-                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
-                    </svg>
-                </span>
-                <h2>{errorMessage}
-                    <a href="#">More Information</a>
-                </h2>
-                <div class="slds-notify__close">
-                    <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
-                        <svg class="slds-button__icon" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-                        </svg>
-                        <span class="slds-assistive-text">Close</span>
-                    </button>
-                </div>
-            </div>
+    <lightning-card  variant="branded"  title="Hello" icon-name="standard:account">
+        <div>
+            <h1>
+                {errorMessage}
+            </h1>
+        </div>
     </lightning-card>
 </template>
