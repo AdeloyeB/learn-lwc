@@ -1,0 +1,43 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-08-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <!-- Example of Simple Data-->
+    <c-p2c-alert-component error-message="Hello Big Head" card-heading="Big Head Express"></c-p2c-alert-component>
+
+    <div class="slds-var-m-bottom_medium"></div>
+<!-- Example of Complex Data -->
+    <c-p2c-carousel-component
+      carousel-details={carouselData}
+    ></c-p2c-carousel-component>
+
+    <!-- Example of Data Passing on an Action / When a value is enter as a Percentage on the Parent, the Child Component Progress Bar is updated-->
+    <div class="slds-var-m-bottom_medium"></div>
+    <lightning-card title="Parent to Child Communication on Action">
+      <div class="slds-var-m-around_medium">
+
+          <lightning-input type="text" 
+            label="Enter percentage" 
+            onkeyup={updateProgressBarHandler} 
+            value={percentage}>
+          </lightning-input>
+
+            <div class="slds-var-m-bottom_medium"></div>
+
+
+            <c-p2c-progress-component progress-value={percentage}></c-p2c-progress-component>
+      </div>
+    </lightning-card>
+
+    <!-- Slider Component-->
+    <lightning-button variant="brand" label="Brand" title="Primary action" onclick={sliderHandleClick}
+      class="slds-m-left_x-small"></lightning-button>
+    <c-p2c-slider-component></c-p2c-slider-component>
+
+
+
+</template>
